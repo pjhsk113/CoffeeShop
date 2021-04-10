@@ -1,6 +1,7 @@
 public class Barista {
-    public static String makeCoffee(int menuNumber) {
-        Menu coffee = Menu.valueOf(menuNumber);
-        return coffee.getCoffeeName();
+    private static final String FINISHED_MAKE_COFFEE = "%s가 완성되었습니다.\n";
+
+    public static void makeCoffee(String orderedCoffee) {
+        System.out.printf(FINISHED_MAKE_COFFEE, orderedCoffee);
     }
 }
