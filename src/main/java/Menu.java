@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public enum Menu {
-    WATER(0, "물", 0),
     AMERICANO(1, "아메리카노", 2500),
     CAPPUCCINO(2, "카푸치노", 3000),
     LATTE(3, "라떼", 3000);
@@ -32,6 +31,7 @@ public enum Menu {
         return Arrays.stream(values())
                 .filter(e -> e.getMenuNumber() == menuNumber)
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("0,1,2,3 중에 입력 바람!"));
+                .orElseThrow(() ->
+                        new IllegalArgumentException("유효한 메뉴 번호가 아닙니다."));
     }
 }
